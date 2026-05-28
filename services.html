@@ -9,6 +9,16 @@
 <body>
 <header>
   <h1>Our Products</h1>
+  <div class="header-icons">
+    <button class="icon-btn" id="wishlistBtn" title="Wishlist">
+      <span class="icon">❤️</span>
+      <span class="badge" id="wishlistCount">0</span>
+    </button>
+    <button class="icon-btn" id="cartBtn" title="Shopping Cart">
+      <span class="icon">🛒</span>
+      <span class="badge" id="cartCount">0</span>
+    </button>
+  </div>
   <nav><a href="index.html">Home</a>
     <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
@@ -16,30 +26,106 @@
   </nav>
 </header>
 
+<!-- Wishlist Panel -->
+<div class="side-panel" id="wishlistPanel">
+  <div class="panel-header">
+    <h3>❤️ My Wishlist</h3>
+    <button class="close-panel" id="closeWishlist">✕</button>
+  </div>
+  <div class="panel-content" id="wishlistContent">
+    <p class="empty-message">Your wishlist is empty</p>
+  </div>
+</div>
+
+<!-- Cart Panel -->
+<div class="side-panel" id="cartPanel">
+  <div class="panel-header">
+    <h3>🛒 Shopping Cart</h3>
+    <button class="close-panel" id="closeCart">✕</button>
+  </div>
+  <div class="panel-content" id="cartContent">
+    <p class="empty-message">Your cart is empty</p>
+  </div>
+  <div class="panel-footer" id="cartFooter" style="display: none;">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+    <button class="checkout-btn" onclick="contactWhatsApp('my cart items')">💬 Contact to Order</button>
+  </div>
+</div>
+
+<!-- Panel Overlay -->
+<div class="panel-overlay" id="panelOverlay"></div>
+
 <section id="products">
   <div class="product-grid">
-    <div class="product-card">
+    <div class="product-card" onclick="showProductInfo(this)">
       <h3>High Back Chair</h3>
-      <button onclick="contactWhatsApp('High Back Chair')">Send Message</button>
+      <img src="images/service-furniture.jpg" alt="High Back Chair">
+      <div class="image-overlay">Click for details</div>
+      <div class="product-data" data-name="High Back Chair" data-description="Comfortable high back chair with premium upholstery and ergonomic design" data-category="Furniture" data-price="Contact for quote"></div>
+      <button onclick="event.stopPropagation(); contactWhatsApp('High Back Chair')">Send Message</button>
     </div>
-    <div class="product-card">
+    <div class="product-card" onclick="showProductInfo(this)">
       <h3>L Shape Sofa</h3>
-      <button onclick="contactWhatsApp('L Shape Sofa')">Send Message</button>
+      <img src="images/Sofa_4.png" alt="L Shape Sofa">
+      <div class="image-overlay">Click for details</div>
+      <div class="product-data" data-name="L Shape Sofa" data-description="Stylish L-shaped sofa perfect for modern living rooms with comfortable seating" data-category="Living Room" data-price="Contact for quote"></div>
+      <button onclick="event.stopPropagation(); contactWhatsApp('L Shape Sofa')">Send Message</button>
     </div>
-    <div class="product-card">
+    <div class="product-card" onclick="showProductInfo(this)">
       <h3>3+2 Sofa</h3>
-      <button onclick="contactWhatsApp('3+2 Sofa')">Send Message</button>
+      <img src="images/Sofa.png" alt="3+2 Sofa">
+      <div class="image-overlay">Click for details</div>
+      <div class="product-data" data-name="3+2 Sofa Set" data-description="Classic 3+2 seater sofa set with premium fabric and comfortable cushioning" data-category="Living Room" data-price="Contact for quote"></div>
+      <button onclick="event.stopPropagation(); contactWhatsApp('3+2 Sofa')">Send Message</button>
     </div>
-    <div class="product-card">
+    <div class="product-card" onclick="showProductInfo(this)">
       <h3>BED</h3>
-      <button onclick="contactWhatsApp('BED')">Send Message</button>
+      <img src="images/Cot.png" alt="Wooden Bed">
+      <div class="image-overlay">Click for details</div>
+      <div class="product-data" data-name="Wooden Bed" data-description="Premium wooden bed with elegant design and sturdy construction" data-category="Bedroom" data-price="Contact for quote"></div>
+      <button onclick="event.stopPropagation(); contactWhatsApp('BED')">Send Message</button>
     </div>
-    <div class="product-card">
+    <div class="product-card" onclick="showProductInfo(this)">
       <h3>Dining Table</h3>
-      <button onclick="contactWhatsApp('Dining Table')">Send Message</button>
+      <img src="images/service-interior.jpg" alt="Dining Table">
+      <div class="image-overlay">Click for details</div>
+      <div class="product-data" data-name="Dining Table Set" data-description="Elegant dining table with chairs, perfect for family gatherings" data-category="Dining" data-price="Contact for quote"></div>
+      <button onclick="event.stopPropagation(); contactWhatsApp('Dining Table')">Send Message</button>
     </div>
   </div>
 </section>
+
+<!-- Product Info Modal -->
+<div id="productModal" class="product-modal">
+  <div class="modal-content">
+    <span class="close-modal" onclick="closeModal()">&times;</span>
+    <div class="modal-body">
+      <div class="modal-image">
+        <img id="modalImage" src="" alt="">
+      </div>
+      <div class="modal-details">
+        <h2 id="modalTitle"></h2>
+        <p class="modal-category"><strong>Category:</strong> <span id="modalCategory"></span></p>
+        <p class="modal-description" id="modalDescription"></p>
+        <p class="modal-price"><strong>Price:</strong> <span id="modalPrice"></span></p>
+        <div class="modal-actions">
+          <button onclick="addToWishlistFromModal()" class="action-btn wishlist-modal-btn">
+            ❤️ Add to Wishlist
+          </button>
+          <button onclick="addToCartFromModal()" class="action-btn cart-modal-btn">
+            🛒 Add to Cart
+          </button>
+          <button onclick="contactWhatsApp()" class="action-btn whatsapp-btn">
+            💬 WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <footer>
   <p>© 2026 KrishnaHomeInterior and Furniture</p>

@@ -10,12 +10,54 @@
 
 <header>
   <h1>Contact Us</h1>
+  <div class="header-icons">
+    <button class="icon-btn" id="wishlistBtn" title="Wishlist">
+      <span class="icon">❤️</span>
+      <span class="badge" id="wishlistCount">0</span>
+    </button>
+    <button class="icon-btn" id="cartBtn" title="Shopping Cart">
+      <span class="icon">🛒</span>
+      <span class="badge" id="cartCount">0</span>
+    </button>
+  </div>
   <nav><a href="index.html">Home</a>
       <a href="services.html">Services</a>
     <a href="gallery.html">Gallery</a>
     <a href="contact.html">Contact</a>
 	</nav>
 </header>
+
+<!-- Wishlist Panel -->
+<div class="side-panel" id="wishlistPanel">
+  <div class="panel-header">
+    <h3>❤️ My Wishlist</h3>
+    <button class="close-panel" id="closeWishlist">✕</button>
+  </div>
+  <div class="panel-content" id="wishlistContent">
+    <p class="empty-message">Your wishlist is empty</p>
+  </div>
+</div>
+
+<!-- Cart Panel -->
+<div class="side-panel" id="cartPanel">
+  <div class="panel-header">
+    <h3>🛒 Shopping Cart</h3>
+    <button class="close-panel" id="closeCart">✕</button>
+  </div>
+  <div class="panel-content" id="cartContent">
+    <p class="empty-message">Your cart is empty</p>
+  </div>
+  <div class="panel-footer" id="cartFooter" style="display: none;">
+    <div class="cart-total">
+      <span>Total:</span>
+      <span id="cartTotal">₹0</span>
+    </div>
+    <button class="checkout-btn" onclick="contactWhatsApp('my cart items')">💬 Contact to Order</button>
+  </div>
+</div>
+
+<!-- Panel Overlay -->
+<div class="panel-overlay" id="panelOverlay"></div>
 
 <section id="contact">
   <p>📍 Rajam, Srikakulam, Vizianagaram,Pincode: 532127<p>
