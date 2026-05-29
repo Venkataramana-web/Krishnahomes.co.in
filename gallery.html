@@ -17,210 +17,322 @@
   </nav>
 </header>
 
+<!-- Category Filter Section -->
+<section class="category-filter-section">
+  <div class="filter-container">
+    <h2>Shop by Category</h2>
+    <div class="category-buttons">
+      <button class="category-btn active" onclick="filterCategory('all')">🏠 All Products</button>
+      <button class="category-btn" onclick="filterCategory('sofa')">🛋️ Sofas</button>
+      <button class="category-btn" onclick="filterCategory('bed')">🛏️ Beds & Cots</button>
+      <button class="category-btn" onclick="filterCategory('chair')">🪑 Chairs</button>
+      <button class="category-btn" onclick="filterCategory('dining')">🍽️ Dining Tables</button>
+      <button class="category-btn" onclick="filterCategory('dressing')">💄 Dressing Tables</button>
+      <button class="category-btn" onclick="filterCategory('other')">✨ Others</button>
+    </div>
+    <p class="results-count" id="resultsCount">Showing all products</p>
+  </div>
+</section>
+
 <section class="gallery-grid">
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="sofa" onclick="showProductInfo(this)">
     <h3>Sofa</h3>
     <img src="images/Sofa.png" alt="Modern Living Room">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Sofa" data-description="Elegant living room design with contemporary furniture and warm lighting" data-category="Living Room" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Sofa" data-description="Elegant living room design with contemporary furniture and warm lighting" data-category="Sofa" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="bed" onclick="showProductInfo(this)">
     <h3>Cot</h3>
     <img src="images/Cot.png" alt="Luxury Bedroom">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Cot" data-description="Premium bedroom design with custom wardrobe and elegant furnishings" data-category="Bedroom" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Cot" data-description="Premium bedroom design with custom wardrobe and elegant furnishings" data-category="Bed" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="dressing" onclick="showProductInfo(this)">
     <h3>Dressing Table</h3>
     <img src="images/Dressing_Table.png" alt="Dressing Table Design">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Dressing Table" data-description="Fully equipped modern kitchen with modular cabinets and premium appliances" data-category="Living Room" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Dressing Table" data-description="Elegant dressing table with mirror and storage compartments" data-category="Dressing Table" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="bed" onclick="showProductInfo(this)">
     <h3>Cot 6x6</h3>
     <img src="images/Cot_1.png" alt="Bedroom Interior">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Cot 6x6" data-description="Beautiful dining area with custom furniture and ambient lighting" data-category="BedRoom " data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Cot 6x6" data-description="Spacious 6x6 bed with quality wood finish" data-category="Bed" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="sofa" onclick="showProductInfo(this)">
     <h3>Sofa Set</h3>
     <img src="images/Sofa_1.png" alt="Sofa set Design">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Sofa set" data-description="Contemporary office space with ergonomic furniture and smart storage solutions" data-category="Living Area" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Sofa Set" data-description="Contemporary sofa set with comfortable cushioning and elegant design" data-category="Sofa" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="bed" onclick="showProductInfo(this)">
     <h3>Cot with Storage</h3>
     <img src="images/Cot_With_Storage.png" alt="Cot with Storage">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Cot with Storage" data-description="Colorful and functional kids room with play area and study space" data-category="Bed Room" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Cot with Storage" data-description="Practical bed with built-in storage drawers" data-category="Bed" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="sofa" onclick="showProductInfo(this)">
     <h3>Sofa Set</h3>
-    <img src="images/Sofa_2.png" alt="Wardrobe Design">
+    <img src="images/Sofa_2.png" alt="Sofa Design">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Sofa Set" data-description="Spacious wardrobe with organized compartments and mirror finish" data-category="Wardrobe" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Sofa Set" data-description="Premium sofa set with modern aesthetics" data-category="Sofa" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="sofa" onclick="showProductInfo(this)">
     <h3>Sofa Set</h3>
     <img src="images/Sofa_4.png" alt="Sofa Set">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Sofa Set" data-description="Stylish entertainment unit with storage and cable management" data-category="Living Room" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Sofa Set" data-description="Stylish sofa set perfect for living rooms" data-category="Sofa" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="dressing" onclick="showProductInfo(this)">
     <h3>Premium Dressing Table</h3>
     <img src="images/Dressing_Table_1.png" alt="Dressing Table">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Premium Dressing Table" data-description="Comfortable and elegant sofa set with premium upholstery" data-category="Furniture" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Premium Dressing Table" data-description="Luxurious dressing table with LED lighting" data-category="Dressing Table" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="other" onclick="showProductInfo(this)">
     <h3>Uyyala</h3>
     <img src="images/Uyyala.png" alt="Balcony Design">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Uyyala" data-description="Complete modular kitchen with high-quality cabinets and countertops" data-category="Balcony" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Uyyala" data-description="Traditional uyyala for your balcony or porch" data-category="Home Decor" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="bed" onclick="showProductInfo(this)">
     <h3>Iron Cot</h3>
     <img src="images/Iron_Cot.png" alt="Bed Room Design">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Iron Cot" data-description="Modern bathroom with premium fittings and elegant tilework" data-category="BedRoom" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Iron Cot" data-description="Durable iron cot with elegant design" data-category="Bed" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="bed" onclick="showProductInfo(this)">
     <h3>TeakWood Cot</h3>
     <img src="images/Cot_4.png" alt="Bedroom Furniture">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="TeakWood Cot" data-description="Cozy balcony design with seating and decorative elements" data-category="BedRoom" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="TeakWood Cot" data-description="Premium teakwood bed with traditional craftsmanship" data-category="Bed" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="chair" onclick="showProductInfo(this)">
     <h3>Wooden Chair</h3>
     <img src="images/Chair.png" alt="Living Room Design">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Wooden Chair" data-description="Functional study space with custom desk and bookshelf" data-category="Living Room" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Wooden Chair" data-description="Sturdy wooden chair with comfortable design" data-category="Chair" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="bed" onclick="showProductInfo(this)">
     <h3>Cot 6x6</h3>
     <img src="images/Cot_5.png" alt="Teak Wood Cot 6x6">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Cot 6x6" data-description="Traditional pooja room with intricate woodwork and lighting" data-category="Bed Room" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Cot 6x6" data-description="Large 6x6 wooden bed with premium finish" data-category="Bed" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="dining" onclick="showProductInfo(this)">
     <h3>Dining Table</h3>
     <img src="images/Dining_Table_3.png" alt="Dining Area">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Dining Table" data-description="Comfortable guest room with storage and modern amenities" data-category="Dining Table" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Dining Table" data-description="Spacious dining table for family gatherings" data-category="Dining Table" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
-    <h3>Juwla</h3>
-    <img src="images/Juwla.jpg" alt="Interior Design">
+  <div class="gallery-item" data-category="other" onclick="showProductInfo(this)">
+    <h3>Jhula</h3>
+    <img src="images/Jhula.jpg" alt="Interior Design">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Juwla" data-description="Stylish interior design with modern aesthetics" data-category="Home Interior" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Jhula" data-description="Traditional Jhula swing for your home" data-category="Home Decor" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="dining" onclick="showProductInfo(this)">
     <h3>Dining Table 4 Chairs</h3>
     <img src="images/Dining_Table_4_Chairs.jpeg" alt="Dining Table with 4 Chairs">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Dining Table 4 chairs" data-description="Handcrafted furniture piece with quality materials" data-category="Furniture" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Dining Table 4 chairs" data-description="Complete dining set with table and 4 chairs" data-category="Dining Table" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="dining" onclick="showProductInfo(this)">
     <h3>Dining Table</h3>
     <img src="images/Dining_Table.jpeg" alt="Home Decor">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Dining Table" data-description="Complete home decoration with accessories and furnishings" data-category="Home Decor" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Dining Table" data-description="Modern dining table with clean lines" data-category="Dining Table" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="other" onclick="showProductInfo(this)">
     <h3>Premium Showcase Design</h3>
     <img src="images/gallery-1.jpg" alt="Showcase Design 1">
     <div class="image-overlay">Click for details</div>
     <div class="product-data" data-name="Premium Showcase Design" data-description="Elegant showcase design with LED lighting and glass panels" data-category="Living Room" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="other" onclick="showProductInfo(this)">
     <h3>Complete Home Interior</h3>
     <img src="images/gallery-2.jpg" alt="Interior Project 2">
     <div class="image-overlay">Click for details</div>
     <div class="product-data" data-name="Complete Home Interior" data-description="Full home interior design project with all rooms" data-category="Home Interior" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="other" onclick="showProductInfo(this)">
     <h3>Residential Interior Design</h3>
     <img src="images/gallery-3.jpg" alt="Design Project 3">
     <div class="image-overlay">Click for details</div>
     <div class="product-data" data-name="Residential Interior Design" data-description="Beautiful residential interior with custom solutions" data-category="Home Interior" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="other" onclick="showProductInfo(this)">
     <h3>Modern Home Design</h3>
     <img src="images/gallery-4.jpg" alt="Project Showcase 4">
     <div class="image-overlay">Click for details</div>
     <div class="product-data" data-name="Modern Home Design" data-description="Contemporary home design with latest trends" data-category="Home Interior" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="other" onclick="showProductInfo(this)">
     <h3>Signature Interior Design</h3>
     <img src="images/hero-interior.jpg" alt="Hero Interior Design">
     <div class="image-overlay">Click for details</div>
     <div class="product-data" data-name="Signature Interior Design" data-description="Our signature interior design showcasing premium craftsmanship" data-category="Featured" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="chair" onclick="showProductInfo(this)">
     <h3>Wooden Chair</h3>
     <img src="images/Chair_1.jpg" alt="Living Area">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Wooden Chair" data-description="Recently completed interior design project" data-category="Livivng Area" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Wooden Chair" data-description="Classic wooden chair with comfortable seating" data-category="Chair" data-price="Contact for quote"></div>
   </div>
   
-  <div class="gallery-item" onclick="showProductInfo(this)">
+  <div class="gallery-item" data-category="chair" onclick="showProductInfo(this)">
     <h3>Wooden Chair</h3>
     <img src="images/Chair_2.jpg" alt="Living Area">
     <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Wooden Chair" data-description="Successfully implemented interior design solution" data-category="Living Area" data-price="Contact for quote"></div>
-  </div>
-  
-  <div class="gallery-item" onclick="showProductInfo(this)">
-    <h3>Furniture Services</h3>
-    <img src="images/service-furniture.jpg" alt="Furniture Service">
-    <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Furniture Services" data-description="Custom furniture design and manufacturing services" data-category="Services" data-price="Contact for quote"></div>
-  </div>
-  
-  <div class="gallery-item" onclick="showProductInfo(this)">
-    <h3>Interior Design Services</h3>
-    <img src="images/service-interior.jpg" alt="Interior Service">
-    <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Interior Design Services" data-description="Professional interior design consultation and implementation" data-category="Services" data-price="Contact for quote"></div>
-  </div>
-  
-  <div class="gallery-item" onclick="showProductInfo(this)">
-    <h3>Kitchen Design Services</h3>
-    <img src="images/service-kitchen.jpg" alt="Kitchen Service">
-    <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Kitchen Design Services" data-description="Complete modular kitchen design and installation" data-category="Services" data-price="Contact for quote"></div>
-  </div>
-  
-  <div class="gallery-item" onclick="showProductInfo(this)">
-    <h3>Wardrobe Services</h3>
-    <img src="images/service-wardrobe.jpg" alt="Wardrobe Service">
-    <div class="image-overlay">Click for details</div>
-    <div class="product-data" data-name="Wardrobe Services" data-description="Custom wardrobe design with optimal storage solutions" data-category="Services" data-price="Contact for quote"></div>
+    <div class="product-data" data-name="Wooden Chair" data-description="Elegant wooden chair for any room" data-category="Chair" data-price="Contact for quote"></div>
   </div>
 </section>
+
+<style>
+  .category-filter-section {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    padding: 40px 20px;
+    margin-bottom: 30px;
+  }
+
+  .filter-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .filter-container h2 {
+    color: #4b2e2e;
+    font-size: 32px;
+    margin-bottom: 25px;
+    font-weight: 700;
+  }
+
+  .category-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .category-btn {
+    padding: 12px 25px;
+    border: 2px solid #6d4c41;
+    background: white;
+    color: #4b2e2e;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .category-btn:hover {
+    background: #6d4c41;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(109, 76, 65, 0.3);
+  }
+
+  .category-btn.active {
+    background: linear-gradient(135deg, #4b2e2e 0%, #6d4c41 100%);
+    color: white;
+    border-color: #4b2e2e;
+  }
+
+  .results-count {
+    color: #666;
+    font-size: 16px;
+    font-style: italic;
+    margin-top: 15px;
+  }
+
+  .gallery-item {
+    transition: all 0.3s ease;
+  }
+
+  .gallery-item.hidden {
+    display: none;
+  }
+
+  @media (max-width: 768px) {
+    .filter-container h2 {
+      font-size: 24px;
+    }
+
+    .category-btn {
+      font-size: 14px;
+      padding: 10px 20px;
+    }
+  }
+</style>
+
+<script>
+  // Category filter function
+  function filterCategory(category) {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    const categoryBtns = document.querySelectorAll('.category-btn');
+    const resultsCount = document.getElementById('resultsCount');
+    
+    // Remove active class from all buttons
+    categoryBtns.forEach(btn => btn.classList.remove('active'));
+    
+    // Add active class to clicked button
+    event.target.classList.add('active');
+    
+    let visibleCount = 0;
+    
+    // Filter items
+    galleryItems.forEach(item => {
+      const itemCategory = item.getAttribute('data-category');
+      
+      if (category === 'all' || itemCategory === category) {
+        item.classList.remove('hidden');
+        visibleCount++;
+      } else {
+        item.classList.add('hidden');
+      }
+    });
+    
+    // Update results count
+    const categoryNames = {
+      'all': 'all products',
+      'sofa': 'sofas',
+      'bed': 'beds & cots',
+      'chair': 'chairs',
+      'dining': 'dining tables',
+      'dressing': 'dressing tables',
+      'other': 'other items'
+    };
+    
+    resultsCount.textContent = `Showing ${visibleCount} ${categoryNames[category] || 'items'}`;
+  }
+</script>
 
 <!-- Wishlist Panel -->
 <div class="side-panel" id="wishlistPanel">

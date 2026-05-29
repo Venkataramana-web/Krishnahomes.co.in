@@ -13,7 +13,8 @@
   <h1>Krishna Home Interior & Furniture</h1>
   <div class="header-right">
     <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Search services, furniture..." />
+      <input type="text" id="searchInput" placeholder="Search services, furniture..." autocomplete="off" />
+      <div class="search-dropdown" id="searchDropdown"></div>
       <input type="file" id="imageSearch" accept="image/*" style="display: none;" />
       <button type="button" id="cameraBtn" title="Search by image">📷</button>
       <button type="button" id="searchBtn" title="Search">🔍</button>
@@ -75,35 +76,9 @@
   <div class="hero-slide"></div>
 
   <div class="hero-content">
-    <h2>Elegant Interiors & Premium Furniture</h2>
+    <h2>Elegant & Premium Furniture</h2>
     <p>Crafting Beautiful Spaces for Your Dream Home</p>
     <a href="#services" class="hero-btn">Explore Our Services</a>
-  </div>
-</section>
-
-<!-- TRUST BADGES -->
-<section class="trust-section">
-  <div class="trust-badges">
-    <div class="badge">
-      <span class="badge-icon">⭐</span>
-      <h4>Quality Assured</h4>
-      <p>Premium materials & craftsmanship</p>
-    </div>
-    <div class="badge">
-      <span class="badge-icon">🚚</span>
-      <h4>Easy Delivery</h4>
-      <p>On-time delivery & assembly</p>
-    </div>
-    <div class="badge">
-      <span class="badge-icon">🎨</span>
-      <h4>Customization</h4>
-      <p>Tailored to your needs</p>
-    </div>
-    <div class="badge">
-      <span class="badge-icon">💬</span>
-      <h4>Customer Support</h4>
-      <p>We're here to help you</p>
-    </div>
   </div>
 </section>
 
@@ -184,7 +159,7 @@
     <div class="card">
       <img src="images/service-wardrobe.jpg" alt="Wooden Beds">
       <div class="card-content">
-        <h3>Wooden Beds</h3>
+        <h3>Wooden CupBoards</h3>
         <p>Quality craftsmanship</p>
         <a href="gallery.html" class="card-link">View Collection →</a>
       </div>
@@ -308,7 +283,6 @@
       <span class="contact-icon">📞</span>
       <h4>Phone Numbers</h4>
       <p><a href="tel:+919030301893" class="contact-link">+91-9030301893</a></p>
-      <p><a href="tel:+918826074560" class="contact-link">+91-8826074560</a></p>
       <p class="contact-note">Available Mon-Sat: 9 AM - 7 PM</p>
     </div>
     
@@ -337,6 +311,32 @@
        target="_blank">
        💬 Chat on WhatsApp
     </a>
+  </div>
+</section>
+
+<!-- TRUST BADGES -->
+<section class="trust-section">
+  <div class="trust-badges">
+    <div class="badge">
+      <span class="badge-icon">⭐</span>
+      <h4>Quality Assured</h4>
+      <p>Premium materials & craftsmanship</p>
+    </div>
+    <div class="badge">
+      <span class="badge-icon">🚚</span>
+      <h4>Easy Delivery</h4>
+      <p>On-time delivery & assembly</p>
+    </div>
+    <div class="badge">
+      <span class="badge-icon">🎨</span>
+      <h4>Customization</h4>
+      <p>Tailored to your needs</p>
+    </div>
+    <div class="badge">
+      <span class="badge-icon">💬</span>
+      <h4>Customer Support</h4>
+      <p>We're here to help you</p>
+    </div>
   </div>
 </section>
 
@@ -398,6 +398,122 @@
 <footer>
   <p>© 2026 Krishna Home Interior & Furniture | All Rights Reserved</p>
 </footer>
+
+<script>
+// Search Dropdown Autocomplete Functionality
+(function() {
+  const searchInput = document.getElementById('searchInput');
+  const searchDropdown = document.getElementById('searchDropdown');
+  
+  // Define searchable items (products and services)
+  const searchableItems = [
+    { name: 'Sofa Sets', category: 'Furniture', icon: '🛋️', page: 'gallery.html' },
+    { name: 'Sofa', category: 'Furniture', icon: '🛋️', page: 'gallery.html' },
+    { name: 'Wooden Beds', category: 'Furniture', icon: '🛏️', page: 'gallery.html' },
+    { name: 'Cot', category: 'Furniture', icon: '🛏️', page: 'gallery.html' },
+    { name: 'Dining Tables', category: 'Furniture', icon: '🍽️', page: 'gallery.html' },
+    { name: 'Dining Table', category: 'Furniture', icon: '🍽️', page: 'gallery.html' },
+    { name: 'Wooden Chair', category: 'Furniture', icon: '🪑', page: 'gallery.html' },
+    { name: 'Chairs', category: 'Furniture', icon: '🪑', page: 'gallery.html' },
+    { name: 'Dressing Table', category: 'Furniture', icon: '💄', page: 'gallery.html' },
+    { name: 'Wardrobe', category: 'Furniture', icon: '🚪', page: 'gallery.html' },
+    { name: 'Home Interior', category: 'Service', icon: '🏠', page: 'services.html' },
+    { name: 'Bedroom Interiors', category: 'Service', icon: '🛏️', page: 'services.html' },
+    { name: 'Modular Kitchen', category: 'Service', icon: '🍳', page: 'services.html' },
+    { name: 'Kitchen Design', category: 'Service', icon: '🍳', page: 'services.html' },
+    { name: 'Living Room Design', category: 'Service', icon: '🛋️', page: 'services.html' },
+    { name: 'Interior Design', category: 'Service', icon: '🎨', page: 'services.html' },
+    { name: 'Furniture Purchase', category: 'Service', icon: '🛒', page: 'gallery.html' },
+    { name: 'Teakwood Cot', category: 'Furniture', icon: '🛏️', page: 'gallery.html' },
+    { name: 'Iron Cot', category: 'Furniture', icon: '🛏️', page: 'gallery.html' },
+    { name: 'Cot with Storage', category: 'Furniture', icon: '🛏️', page: 'gallery.html' }
+  ];
+  
+  // Function to highlight matching text
+  function highlightMatch(text, query) {
+    if (!query) return text;
+    const regex = new RegExp(`(${query})`, 'gi');
+    return text.replace(regex, '<span class="search-highlight">$1</span>');
+  }
+  
+  // Function to show dropdown with results
+  function showDropdown(results, query) {
+    if (results.length === 0) {
+      searchDropdown.innerHTML = '<div class="search-dropdown-no-results">No results found. Try searching for sofas, beds, chairs, or services.</div>';
+    } else {
+      searchDropdown.innerHTML = results.map(item => `
+        <div class="search-dropdown-item" data-page="${item.page}">
+          <span class="search-dropdown-item-icon">${item.icon}</span>
+          <div class="search-dropdown-item-content">
+            <div class="search-dropdown-item-title">${highlightMatch(item.name, query)}</div>
+            <div class="search-dropdown-item-category">${item.category}</div>
+          </div>
+        </div>
+      `).join('');
+      
+      // Add click handlers to dropdown items
+      searchDropdown.querySelectorAll('.search-dropdown-item').forEach(item => {
+        item.addEventListener('click', function() {
+          window.location.href = this.getAttribute('data-page');
+        });
+      });
+    }
+    
+    searchDropdown.classList.add('show');
+  }
+  
+  // Function to hide dropdown
+  function hideDropdown() {
+    searchDropdown.classList.remove('show');
+  }
+  
+  // Search input handler
+  searchInput.addEventListener('input', function(e) {
+    const query = e.target.value.trim();
+    
+    if (query.length < 2) {
+      hideDropdown();
+      return;
+    }
+    
+    // Filter items based on query
+    const results = searchableItems.filter(item => 
+      item.name.toLowerCase().includes(query.toLowerCase()) ||
+      item.category.toLowerCase().includes(query.toLowerCase())
+    );
+    
+    // Show top 8 results
+    showDropdown(results.slice(0, 8), query);
+  });
+  
+  // Handle Enter key
+  searchInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' && this.value.trim()) {
+      // Navigate to gallery if Enter is pressed
+      window.location.href = 'gallery.html';
+    }
+  });
+  
+  // Hide dropdown when clicking outside
+  document.addEventListener('click', function(e) {
+    if (!searchInput.contains(e.target) && !searchDropdown.contains(e.target)) {
+      hideDropdown();
+    }
+  });
+  
+  // Show dropdown when clicking on search input if there's text
+  searchInput.addEventListener('focus', function() {
+    if (this.value.trim().length >= 2) {
+      const query = this.value.trim();
+      const results = searchableItems.filter(item => 
+        item.name.toLowerCase().includes(query.toLowerCase()) ||
+        item.category.toLowerCase().includes(query.toLowerCase())
+      );
+      showDropdown(results.slice(0, 8), query);
+    }
+  });
+})();
+</script>
 
 <script src="js/main.js"></script>
 </body>
