@@ -18,16 +18,6 @@
       <button type="button" id="cameraBtn" title="Search by image">📷</button>
       <button type="button" id="searchBtn" title="Search">🔍</button>
     </div>
-    <div class="header-icons">
-      <button class="icon-btn" id="wishlistBtn" title="Wishlist">
-        <span class="icon">❤️</span>
-        <span class="badge" id="wishlistCount">0</span>
-      </button>
-      <button class="icon-btn" id="cartBtn" title="Shopping Cart">
-        <span class="icon">🛒</span>
-        <span class="badge" id="cartCount">0</span>
-      </button>
-    </div>
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
       <span></span>
       <span></span>
@@ -37,7 +27,7 @@
       <a href="#home">Home</a>
       <a href="#services">Services</a>
       <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
 </header>
@@ -238,23 +228,6 @@
   <div class="section-cta">
     <button class="btn-primary review-btn" id="writeReviewBtn">✍️ Write a Review</button>
   </div>
-  
-  <!-- Customer Submitted Reviews -->
-  <div class="customer-reviews-container">
-    <div class="section-divider">
-      <h3>Recent Customer Reviews</h3>
-    </div>
-    
-    <div class="reviews-container" id="reviewsContainer">
-      <p class="empty-message">No customer reviews yet. Be the first to share your experience!</p>
-    </div>
-    
-    <div class="reviews-pagination" id="reviewsPagination" style="display: none;">
-      <button class="pagination-btn" id="prevReviews">← Previous</button>
-      <span class="page-info" id="pageInfo">Page 1</span>
-      <button class="pagination-btn" id="nextReviews">Next →</button>
-    </div>
-  </div>
 </section>
 
 <!-- Review Submission Modal -->
@@ -318,28 +291,34 @@
 
 <section id="contact" class="contact-section">
   <div class="section-header">
-    <h2>Get In Touch</h2>
+    <h2>Contact Us</h2>
     <p class="section-subtitle">We're here to help bring your vision to life</p>
   </div>
 
   <div class="contact-info">
     <div class="contact-card">
       <span class="contact-icon">📍</span>
-      <h4>Visit Us</h4>
-      <p><a href="https://www.google.com/maps/search/?api=1&query=Rajam,+Srikakulam,+India" target="_blank" class="contact-link">Rajam, Srikakulam, India</a></p>
+      <h4>Our Location</h4>
+      <p>Rajam, Srikakulam, Vizianagaram</p>
+      <p>Pincode: 532127</p>
+      <a href="https://www.google.com/maps/place/Krishna+Homeinterior+and+furniture/@18.4503109,83.6540928,17z/data=!3m1!4b1!4m6!3m5!1s0x3a3c770063a39905:0xda0575bba436637c!8m2!3d18.4503109!4d83.6566677!16s%2Fg%2F11z6161f5p?entry=ttu&g_ep=EgoyMDI2MDUyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" class="contact-link">Get Directions →</a>
     </div>
     
     <div class="contact-card">
       <span class="contact-icon">📞</span>
-      <h4>Call Us</h4>
-      <p><a href="tel:+919030301893" class="contact-link">+91 9030301893</a></p>
+      <h4>Phone Numbers</h4>
+      <p><a href="tel:+919030301893" class="contact-link">+91-9030301893</a></p>
+      <p><a href="tel:+918826074560" class="contact-link">+91-8826074560</a></p>
+      <p class="contact-note">Available Mon-Sat: 9 AM - 7 PM</p>
     </div>
     
     <div class="contact-card">
       <span class="contact-icon">📧</span>
-      <h4>Email Us</h4>
+      <h4>Email Address</h4>
       <p><a href="mailto:krishnahomeinteriorfurniture@gmail.com" class="contact-link">krishnahomeinteriorfurniture@gmail.com</a></p>
+      <p class="contact-note">We'll respond within 24 hours</p>
     </div>
+    
   </div>
 
   <div class="section-cta contact-buttons">
@@ -349,14 +328,14 @@
     </a>
     
     <a class="cta-btn email-btn"
-       href="mailto:krishnahomeinteriorfurniture@gmail.com">
-       📧 Email Us
+       href="mailto:info@krishnainteriorandfurniture.com">
+       📧 Send Email
     </a>
     
     <a class="cta-btn whatsapp-btn"
        href="https://wa.me/919030301893"
        target="_blank">
-       💬 WhatsApp
+       💬 Chat on WhatsApp
     </a>
   </div>
 </section>
@@ -393,6 +372,16 @@
 
 <!-- FLOATING ACTION BUTTONS -->
 <div class="floating-buttons">
+  <button class="float-btn wishlist-float circle-btn" id="wishlistBtn" title="Wishlist">
+    <span class="float-icon">❤️</span>
+    <span class="badge" id="wishlistCount">0</span>
+  </button>
+  
+  <button class="float-btn cart-float circle-btn" id="cartBtn" title="Shopping Cart">
+    <span class="float-icon">🛒</span>
+    <span class="badge" id="cartCount">0</span>
+  </button>
+  
   <a href="tel:+919030301893" class="float-btn call-float circle-btn" title="Buy on Call">
     <svg class="float-icon-svg" viewBox="0 0 24 24" fill="white" width="24" height="24">
       <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/>
